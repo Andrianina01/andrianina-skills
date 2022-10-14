@@ -1,0 +1,171 @@
+.navbar-brand {
+    width: 250px
+}
+
+.navbar-brand img {
+    width: 100%
+}
+
+nav.navbar {
+    z-index: 999;
+    padding-top: 25px;
+}
+
+.navbar-toggler {
+    display: block!important;
+    position: relative;
+    z-index: 9999;
+    width: 70px;
+    padding: 0;
+    height: 45px;
+}
+
+.bar {
+    height: 5px;
+    width: 70px;
+    display: block;
+    background-color: #2c3440;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.bar {
+    position: absolute;
+}
+
+.bar:nth-of-type(1) {
+    top: 0;
+    -moz-transition: top 0.3s ease 0.3s, -moz-transform 0.3s ease-out 0.1s;
+    -o-transition: top 0.3s ease 0.3s, -o-transform 0.3s ease-out 0.1s;
+    -webkit-transition: top 0.3s ease, -webkit-transform 0.3s ease-out;
+    -webkit-transition-delay: 0.3s, 0.1s;
+    transition: top 0.3s ease 0.3s, transform 0.3s ease-out 0.1s;
+    width: 50%;
+}
+
+.bar:nth-of-type(2) {
+    top: 15px;
+    -moz-transition: ease 0.3s 0.3s;
+    -o-transition: ease 0.3s 0.3s;
+    -webkit-transition: ease 0.3s;
+    -webkit-transition-delay: 0.3s;
+    transition: ease 0.6s;
+    width: 75%;
+}
+
+.bar:nth-of-type(3) {
+    top: 30px;
+    -moz-transition: top 0.3s ease 0.3s, -moz-transform 0.3s ease-out 0.1s;
+    -o-transition: top 0.3s ease 0.3s, -o-transform 0.3s ease-out 0.1s;
+    -webkit-transition: top 0.3s ease, -webkit-transform 0.3s ease-out;
+    -webkit-transition-delay: 0.3s, 0.1s;
+    transition: top 0.3s ease 0.3s, transform 0.3s ease-out 0.1s;
+}
+
+.navbar-toggler:not([aria-expanded="true"]):hover .bar:nth-of-type(1) {
+    animation: bar .6s;
+}
+
+.navbar-toggler:not([aria-expanded="true"]):hover .bar:nth-of-type(2) {
+    transform: translatex(10px);
+    animation: bar .4s;
+}
+
+.navbar-toggler:not([aria-expanded="true"]):hover .bar:nth-of-type(3) {
+    animation: bar .2s;
+}
+
+@keyframes bar {
+    0% {
+        transform: translatex(0px);
+    }
+    50% {
+        transform: translatex(15px);
+    }
+    100% {
+        transform: translatex(0px);
+    }
+}
+
+.navbar-toggler[aria-expanded="true"]:not(.collapsed) {
+    -moz-transition: -moz-transform 0.3s ease 0.5s;
+    -o-transition: -o-transform 0.3s ease 0.5s;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    -webkit-transition-delay: 0.5s;
+    transition: transform 0.3s ease 0.5s;
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"]:not(.collapsed) .bar:nth-of-type(1) {
+    top: 15px;
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -moz-transition: top 0.3s ease 0.1s, -moz-transform 0.3s ease-out 0.5s;
+    -o-transition: top 0.3s ease 0.1s, -o-transform 0.3s ease-out 0.5s;
+    -webkit-transition: top 0.3s ease, -webkit-transform 0.3s ease-out;
+    -webkit-transition-delay: 0.1s, 0.5s;
+    transition: top 0.3s ease 0.1s, transform 0.3s ease-out 0.5s;
+    width: 100%;
+}
+
+.navbar-toggler[aria-expanded="true"]:not(.collapsed) .bar:nth-of-type(2) {
+    opacity: 0;
+}
+
+.navbar-toggler[aria-expanded="true"]:not(.collapsed) .bar:nth-of-type(3) {
+    top: 15px;
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -moz-transition: top 0.3s ease 0.1s, -moz-transform 0.3s ease-out 0.7s;
+    -o-transition: top 0.3s ease 0.1s, -o-transform 0.3s ease-out 0.7s;
+    -webkit-transition: top 0.3s ease, -webkit-transform 0.3s ease-out;
+    -webkit-transition-delay: 0.1s, 0.7s;
+    transition: top 0.3s ease 0.1s, transform 0.3s ease-out 0.7s;
+}
+
+.navbar-collapse {
+    position: fixed;
+    top: 0px;
+    right: 0;
+    padding-top: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 25%;
+    height: 100%;
+    background-color: #777;
+    z-index: 99;
+    display: block!important;
+    opacity: 0;
+    visibility: hidden
+}
+
+.navbar-collapse.collapsing {
+    right: 0;
+    transition: .6s;
+    opacity: 1;
+    visibility: visible;
+}
+
+.navbar-collapse.show {
+    right: 0;
+    transition: 300ms ease-in-out;
+    opacity: 1;
+    visibility: visible;
+}
+
+.navbar-toggler.collapsed~.navbar-collapse {
+    transition: 500ms ease-in-out;
+}
