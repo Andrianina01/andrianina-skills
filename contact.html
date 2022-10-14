@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact</title>
+	 <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+	  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+ <div class="loader">
+
+	<div class="pre_load">
+
+
+
+	</div>
+
+</div> 
+<input type="button" value="Send Email" onclick="sendEmail()">
+
+			
+
+<script src="lib/jquery/jquery-3.6.0.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/gsap/gsap.min.js"></script>
+<script src="lib/gsap/ScrollToPlugin.min.js"></script>
+<script src="lib/gsap/ScrollTrigger.min.js"></script>
+<script src="lib/gsap/scrollsmooth.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="js/custom.js"></script>
+<script>
+    	function sendEmail() {
+Email.send({
+    Host : "smtp.mailtrap.io",
+    Username : "andrianina660@gmail.com",
+    Password : "gtx660ti",
+    To : 'andry@softibox.com',
+    From : "andrianina660@gmail.com",
+    Subject : "Test email",
+    Body : "<html><h2>Header</h2><strong>Bold text</strong><br></br><em>Italic</em></html>"
+}).then(
+  message => alert(message)
+);
+}
+</script>
+</body>
+</html>
