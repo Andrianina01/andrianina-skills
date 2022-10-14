@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('.slider').slick({
+    /**$('.slider').slick({
         dots: false,
         infinite: true,
         speed: 2000,
@@ -20,7 +20,7 @@ $(document).ready(function(){
         autoplaySpeed:2000,
         pauseOnHover:true,
         fade:true
-      });
+      });*/
 
         $('.btn-img').mouseover(function() {
           $('.img-xxl').hide(500);
@@ -38,14 +38,14 @@ $(window).on('load',function(){
     $('.loader').remove()
   }
   function fade(){
-    $('.pre_load').delay(2000).fadeIn(function(){
+    $('.loader').delay(2000).fadeIn(function(){
       preload()
     });
   }
   function preload(){
   c1 = gsap.timeline();
 
-  c1.to('.pre_load',{
+  c1.to('.loader',{
     yPercent:-100,
     duration:2,
     ease: Bounce.easeOut
